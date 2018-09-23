@@ -13,7 +13,7 @@ class Film extends Model  implements HasMedia
     //
     public function comments()
     {
-        return $this->hasMany('App\Comment');
+        return $this->hasMany('App\Comment', 'foreign_key', 'film_id');
     }
     public function genres()
     {

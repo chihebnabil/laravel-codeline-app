@@ -15,6 +15,9 @@ class CreateCommentsTable extends Migration
     {
         Schema::create('comments', function (Blueprint $table) {
             $table->increments('id');
+            $table->text('text');
+            $table->integer('film_id');
+            $table->integer('user_id');
             $table->timestamps();
         });
     }
