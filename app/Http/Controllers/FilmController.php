@@ -7,7 +7,6 @@ use Illuminate\Http\Request;
 
 
 
-
 class FilmsController extends Controller {
     protected $perPage = 1;
 
