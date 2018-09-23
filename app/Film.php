@@ -11,4 +11,12 @@ class Film extends Model  implements HasMedia
 {
     use HasMediaTrait;
     //
+    public function comments()
+    {
+        return $this->hasMany('App\Comment');
+    }
+    public function genres()
+    {
+        return $this->hasMany('App\Genre');
+    }
 }

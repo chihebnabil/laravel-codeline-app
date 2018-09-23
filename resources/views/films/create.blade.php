@@ -2,15 +2,15 @@
 @section('content')
 <h1>Create a Film</h1>
 
-{!! Form::open(['url' => 'films/store']) !!}
+{!! Form::open(['url' => 'film/store' , "method" => "post"]) !!}
   
   {!! Form::label("name", 'Film Name', []) !!}
   
-  {!! Form::text("name", null, ['class' => 'form-control']) !!}
+  {!! Form::text("name", null, ['class' => 'form-control', 'required' => "required" ]) !!}
 
 
   {!! Form::label("description", 'Film Description', []) !!}
-  {!! Form::textarea("description", null, ['class' => 'form-control']) !!}
+  {!! Form::textarea("description", null, ['class' => 'form-control' ,'required' => "required"]) !!}
 
 {!! Form::label("rating", 'Film Rating', []) !!}
 
@@ -18,10 +18,14 @@
 
 {!! Form::label("ticket_price", 'Ticket Price', []) !!}
   
-  {!! Form::number("ticket_price", "", ["class"=> "form-control",'min'=>"1","step"=>0.1] ) !!}
+  {!! Form::number("ticket_price", "", ["class"=> "form-control",'min'=>"1","step"=>0.1 ,'required' => "required"] ) !!}
   
-  
-  {!! Form::submit("Submit", []) !!}
+  <br>
+   <p>
+   {!! Form::file("photo", ["class"=> ""]) !!}
+   
+ </p>
+  {!! Form::submit("Submit", ["class" => "btn btn-primary"]) !!}
   
 {!! Form::close() !!}
 @endsection
