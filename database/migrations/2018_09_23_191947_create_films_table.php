@@ -29,6 +29,7 @@ class CreateFilmsTable extends Migration
             //photo
             $table->unsignedInteger('photo_id')->nullable();
             $table->foreign('photo_id')->references('id')->on('images')->onUpdate('cascade')->onDelete('set null');
+            $table->string('slug')->unique();
             $table->timestamps();
         });
     }

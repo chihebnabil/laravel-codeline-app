@@ -12,19 +12,6 @@ class FilmsTableSeeder extends Seeder {
     $table = DB::table('films');
     $now = new DateTime();
 
-    //Thor: Ragnarok
-    $table->insert([
-      'name'          => "Thor: Ragnarok",
-      'slug'          => 'thor-ragnarok',
-      'description'   => 'Imprisoned, the almighty Thor finds himself in a lethal gladiatorial contest against the Hulk, his former ally. Thor must fight for survival and race against time to prevent the all-powerful Hela from destroying his home and the Asgardian civilization.',
-      'realease_date' => '2017-11-03',
-      'rating'        => 5,
-      'ticket_price'  => 5.50,
-      'country_id'    => $this->getCountry('us')->id,
-      'genre_id'      => $this->getGenre('action')->id,
-      'photo_id'      => $this->uploadPhoto('thor_ragnarok.jpg')->id,
-      'created_at'    => $now,
-    ]);
 
     //Blade Runner 2049
     $table->insert([
