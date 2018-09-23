@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('main')
 @section('content')
 <h1>Create a Film</h1>
 
