@@ -9,14 +9,23 @@ use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
 
 class Film extends Model  implements HasMedia
 {
-    use HasMediaTrait;
+    use HasMediaTrait, Slugable;
     //
-    public function comments()
-    {
-        return $this->hasMany('App\Comment', 'foreign_key', 'film_id');
-    }
+
     public function genres()
     {
         return $this->hasMany('App\Genre');
+    }
+    public function photo() {
+        return $this->belongsTo(Image::class);
+    }
+    public function comments() {
+        return $this->morphMany(Comment::class, 'commentable');
+    }
+    public function year() {
+        return $this->realease_date->format('Y');
+    }
+    public function title() {
+        return "$this->name ({$this->year()})";
     }
 }
