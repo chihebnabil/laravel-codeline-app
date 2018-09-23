@@ -10,6 +10,11 @@ use Illuminate\Http\Request;
 class FilmsController extends Controller {
     protected $perPage = 1;
 
+    public function __construct()
+    {
+        // Alternativly
+        $this->middleware('auth', ['except' => ['index', 'show','feed']]);
+    }
 
     /**
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View

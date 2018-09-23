@@ -11,7 +11,11 @@ class Film extends Model  implements HasMedia
 {
     use HasMediaTrait, Slugable;
     //
-
+    protected $dates = [
+        'created_at',
+        'updated_at',
+        'realease_date',
+    ];
     public function genres()
     {
         return $this->hasMany('App\Genre');
