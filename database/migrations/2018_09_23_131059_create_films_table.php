@@ -21,7 +21,6 @@ class CreateFilmsTable extends Migration
             $table->integer('rating');
             $table->float('ticket_price');
             $table->integer('country');
-            $table->integer('genre');
             $table->timestamps();
         });
     }

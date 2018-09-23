@@ -15,6 +15,11 @@ class FilmController extends Controller
     public function index()
     {
         //
+        $films = Film::all();
+
+        // load the view and pass the films
+        return view('films.index')
+            ->with('films', $films);
     }
 
     /**
@@ -24,7 +29,8 @@ class FilmController extends Controller
      */
     public function create()
     {
-        //
+        // load the create form (app/views/films/create.blade.php)
+        return view('films.create');
     }
 
     /**
